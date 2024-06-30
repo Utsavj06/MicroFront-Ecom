@@ -11,8 +11,8 @@ iv>  An ECom Application which is a Shell Application fot All other three Applic
 
 For MicroFrontEnd Application, I used create-mf-app to build the Application with React and Javascript.
 
-Here I Used Static Product List as Array of Object containing Details of Product which You can find in Code in
-Product List Aplication's Assets inside of src folder.
+Here I Used Static Product List as Array of Object containing Details of Product which You can find in Code of
+Product-List Aplication's Assets inside of src folder.
 
 I also used shared key in Module Federation so that the react Library Only Loads for 1 Time.
 
