@@ -1,9 +1,13 @@
 The Application Named Micro-Front_Ecom is Micro Front End Application having 4 Application inside.
 
 i>  A Product List Application to show Lists of Product to be available for Selling named Product-List.
+
 ii> A Cart Application to get the Products available in Cart to buy named Cart.
+
 iii> A Checkout Application where user Enter the Checkout Details like Name and Address and Place Order.
+
 iv>  An ECom Application which is a Shell Application fot All other three Application and also it contains
+   
     Redux Store and Header Component as well.
 
 
