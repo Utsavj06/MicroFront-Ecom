@@ -1,0 +1,30 @@
+.prdctContainer{
+    width: 100%;
+    height: 350px;
+    display: inline-block;
+    text-align: center;
+    border: 2px dashed rgb(227, 168, 168);
+}
+
+.prdctContainer .prdctTitle{
+    padding-top: 20px;
+    height: 120px;
+    font-size: smaller;
+    display: block;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+
+.prdctContainer h3{
+    display: inline-block;
+}
+
+.prdctContainer a{
+    text-decoration: underline;
+    color: black;
+}
+
+  .addBtn{
+    width: 100%;
+  }

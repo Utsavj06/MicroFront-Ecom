@@ -1,0 +1,73 @@
+.checkoutPage {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .formSubmit {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .formSubmit div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+  
+  .formSubmit label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .formSubmit input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .formSubmit button {
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  .formSubmit button:hover {
+    background-color: #45a049;
+  }
+  
+  .cartSummary {
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .cartSummary h2 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .cartSummary ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .cartSummary li {
+    margin-bottom: 8px;
+  }
+  
+  .cartSummary h3 {
+    text-align: right;
+  }
+  
