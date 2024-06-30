@@ -6,9 +6,7 @@ ii> A Cart Application to get the Products available in Cart to buy named Cart.
 
 iii> A Checkout Application where user Enter the Checkout Details like Name and Address and Place Order.
 
-iv>  An ECom Application which is a Shell Application fot All other three Application and also it contains
-   
-    Redux Store and Header Component as well.
+iv>  An ECom Application which is a Shell Application fot All other three Application and also it contains, Redux Store and Header Component as well.
 
 
 For MicroFrontEnd Application, I used create-mf-app to build the Application with React and Javascript.
