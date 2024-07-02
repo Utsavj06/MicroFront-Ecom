@@ -35,11 +35,16 @@ v> Cart will run on PORT 3006
 
 vi> Checkout will run on PORT 3003
 
-vii> Ecom - Shell Application will run on PORT 3000
+vii> Ecom - Shell Application will run on PORT 3000 
 
-
-
-
+viii> After Running the All Projects
+      a) Select the Product on Home Screen 
+      by adding into cart.
+      b) Clicking on Cart will Redirect 
+         to Cart Application where You can 
+         get all Cart items and you can             also Modify the Cart Item present.
+      c) There is checkout button which    
+         Redurect You to Checkout Page
 
 
 Thank You
