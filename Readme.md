@@ -43,7 +43,7 @@ viii> After Running the All Projects
       by adding into cart.
       b) Clicking on Cart will Redirect 
          to Cart Application where You can 
-         get all Cart items and you can             also Modify the Cart Item present.
+         get all Cart items and you can          also Modify the Cart Item present.
       c) There is checkout button which    
          Redurect You to Checkout Page
 
