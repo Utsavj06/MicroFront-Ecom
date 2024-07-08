@@ -1,4 +1,4 @@
-import React, { lazy } from "react";
+import React from "react";
 import style from "./Prdct.module.css";
 import { Button, Col, Row } from "react-bootstrap";
 import { useStore } from 'Ecom/store';

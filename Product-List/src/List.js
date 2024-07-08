@@ -4,7 +4,7 @@ import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Products } from "./Assets/Products";
 import Product from "./Components/EachProduct/Product";
-import { Button, Col, Row } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 import { StoreProvider } from "Ecom/store";
 
 const App = () => (

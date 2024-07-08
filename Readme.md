@@ -39,13 +39,18 @@ vii> Ecom - Shell Application will run on PORT 3000
 
 viii> After Running the All Projects
 
-      a) Select the Product on Home Screen 
-      by adding into cart.
-      b) Clicking on Cart will Redirect 
-         to Cart Application where You can 
-         get all Cart items and you can          also Modify the Cart Item present.
-      c) There is checkout button which    
-         Redurect You to Checkout Page
+      a) Select the Product on Home Screen by adding into cart.
+      b) Clicking on Cart will Redirect to Cart Application where You can 
+         get all Cart items and you can also Modify the Cart Item present.
+      c) There is checkout button which Redirect You to Checkout Page
+
+
+
+=> Steps to Use Application
+
+i> Select Product and Add to Cart
+ii>  Click on Cart placed at header.
+iii> Click Proceed to Checkout Button to Go Checkout Page.
 
 
 Thank You

@@ -7,9 +7,9 @@ import { Checkout } from "./Checkout";
 
 const App = () => (
   <StoreProvider>
-  <div className="container">
-    <Checkout />
-  </div>
+    <div className="container">
+      <Checkout />
+    </div>
   </StoreProvider>
 );
 ReactDOM.render(<App />, document.getElementById("app"));

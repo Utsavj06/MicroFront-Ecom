@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react'
-import ReactDOM from 'react-dom'
+import React, { useEffect, useState } from 'react';
 import style from './cart.module.css'
-import { StoreProvider, useStore } from "Ecom/store";
+import { useStore } from "Ecom/store";
 
 const Amount = () => {
   const [totlAmount, setTotlAmount] = useState(0);
