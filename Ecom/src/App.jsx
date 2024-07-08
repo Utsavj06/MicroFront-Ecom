@@ -13,8 +13,8 @@ import { store } from './Store';
 import Head from './Component/Header';
 
 const ProductApp = lazy(() => import('./ProductApp'));
-const Cart = lazy(() => import('./CartApp'));
-const Checkout = lazy(() => import('./CheckoutApp'));
+const CartApp = lazy(() => import('./CartApp'));
+const CheckoutApp = lazy(() => import('./CheckoutApp'));
 
 const App = () => {
   return (
@@ -24,9 +24,9 @@ const App = () => {
         <Container>
           <Suspense fallback={<div>Loading...</div>}>
             <Routes>
-              <Route path="/" element={<ProductApp store={store} />} />
-              <Route path="/checkout" element={<Checkout />} />
-              <Route path="/cart" element={<><Cart /></>} />
+              <Route path="/" element={<ProductApp />} />
+              <Route path="/checkout" element={<CheckoutApp />} />
+              <Route path="/cart" element={<CartApp />} />
             </Routes>
           </Suspense>
         </Container>

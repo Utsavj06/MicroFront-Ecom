@@ -48,13 +48,11 @@ module.exports = (_, argv) => ({
       filename: "remoteEntry.js",
       remotes: {
         Product_List : "Product_List@http://localhost:3001/remoteEntry.js",
-        // Header : "Header@http://localhost:3004/remoteEntry.js",
         Cart : "Cart@http://localhost:3006/remoteEntry.js",
-        // store : "store@http://localhost:3005/remoteEntry.js",
         Checkout : "Checkout@http://localhost:3003/remoteEntry.js"
       },
       exposes: {
-        './store' : './src/Store'
+        './store' : './src/Store',
       },
       shared: {
         ...deps,

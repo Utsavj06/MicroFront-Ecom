@@ -1,19 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import style from "./Head.module.css";
 import { Container } from "react-bootstrap";
 import { Link } from 'react-router-dom';
 import { useSelector } from "react-redux";
 
 const Head = () => {
-  // Selecting cart items from Redux state
   const cartItems = useSelector(state => state.cart.cartItems);
-
-  // useEffect with dependency array to log cartItems only when it changes
-  useEffect(() => {
-    console.log('Cart items updated: ', cartItems);
-  }, [cartItems]); // <-- Specify cartItems as a dependency
-
-  console.log('Component rendered');
 
   return (
     <header className={`${style.AppHeader} d-flex mb-4`}>

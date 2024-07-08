@@ -1,76 +1,87 @@
-import { configureStore } from '@reduxjs/toolkit'
-import { createSlice } from '@reduxjs/toolkit'
-import { Provider, useSelector, useDispatch } from 'react-redux';
+import { configureStore } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
+import { persistStore, persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage'; // defaults to localStorage for web
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
+import { useSelector, useDispatch } from 'react-redux';
 
 const initialState = { cartItems: [] };
 
 const cartSlice = createSlice({
-  name: "cart",
+  name: 'cart',
   initialState,
   reducers: {
-    addToCart: (state, action) => {                 // Slice to Add Product in Cart
-      const { ...item } = action.payload;
-
-      const existItem = state.cartItems.find(
-        (cart) => cart.getProduct.id === item.getProduct.id
-      );
+    addToCart: (state, action) => {
+      const item = action.payload;
+      const existItem = state.cartItems.find(cart => cart.getProduct.id === item.getProduct.id);
 
       if (!existItem) {
-        state.cartItems = [...state.cartItems, item];
-      } else {        
-          state.cartItems.map((prdct) => {
-            if(prdct.getProduct.id === item.getProduct.id){
-            prdct.prdctCount += item.prdctCount;
-            }
-          });
+        state.cartItems.push(item);
+      } else {
+        state.cartItems = state.cartItems.map(prdct =>
+          prdct.getProduct.id === item.getProduct.id
+            ? { ...prdct, prdctCount: prdct.prdctCount + item.prdctCount }
+            : prdct
+        );
       }
     },
-    removeFromCart: (state, action) => {                   // Slice to remove Product from Cart
-      state.cartItems = state.cartItems.filter((x) => x.getProduct.id !== action.payload.id);
+    removeFromCart: (state, action) => {
+      state.cartItems = state.cartItems.filter(x => x.getProduct.id !== action.payload.id);
     },
-    decreasePrdct: (state, action) => {                    // Slice to Decrease the Quantity of Product from Cart
-        const {...item} = action.payload
-
-        state.cartItems.map((prdct)=>{
-            if(prdct.getProduct.id === item.id){
-              prdct.prdctCount -= 1
-            }
-        })
+    decreasePrdct: (state, action) => {
+      state.cartItems = state.cartItems.map(prdct =>
+        prdct.getProduct.id === action.payload.id
+          ? { ...prdct, prdctCount: prdct.prdctCount - 1 }
+          : prdct
+      );
     },
-    increasePrdct: (state, action) => {                    // Slice to Increase the Quantity of Product from Cart
-        const {...item} = action.payload
-
-        state.cartItems.map((prdct)=>{
-            if(prdct.getProduct.id === item.id){
-                prdct.prdctCount += 1
-            }
-        })
-    }
+    increasePrdct: (state, action) => {
+      state.cartItems = state.cartItems.map(prdct =>
+        prdct.getProduct.id === action.payload.id
+          ? { ...prdct, prdctCount: prdct.prdctCount + 1 }
+          : prdct
+      );
+    },
   },
 });
 
-export const { addToCart, removeFromCart, decreasePrdct, resetCart, increasePrdct } =
-  cartSlice.actions;
+export const { addToCart, removeFromCart, decreasePrdct, increasePrdct } = cartSlice.actions;
+
+const persistConfig = {
+  key: 'root',
+  storage,
+};
+
+const persistedReducer = persistReducer(persistConfig, cartSlice.reducer);
 
 export const store = configureStore({
-    reducer : {
-        cart: cartSlice.reducer,
-    },
-})
+  reducer: {
+    cart: persistedReducer,
+  },
+});
 
-export function useStore(){
-    const cart = useSelector(state => state.cart)
-    const dispatch = useDispatch()
+export const persistor = persistStore(store);
 
-    return {
-        cart,
-        addToCart: (item) => dispatch(addToCart(item)),
-        removeFromCart: (item) => dispatch(removeFromCart(item)),
-        decreasePrdct: (item) => dispatch(decreasePrdct(item)),
-        increasePrdct: item => dispatch(increasePrdct(item))
-    }
+export function useStore() {
+  const cart = useSelector(state => state.cart);
+  const dispatch = useDispatch();
+
+  return {
+    cart,
+    addToCart: item => dispatch(addToCart(item)),
+    removeFromCart: item => dispatch(removeFromCart(item)),
+    decreasePrdct: item => dispatch(decreasePrdct(item)),
+    increasePrdct: item => dispatch(increasePrdct(item)),
+  };
 }
 
-export function StoreProvider({children}){
-    return <Provider store={store}>{children}</Provider>
+export function StoreProvider({ children }) {
+  return (
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        {children}
+      </PersistGate>
+    </Provider>
+  );
 }
