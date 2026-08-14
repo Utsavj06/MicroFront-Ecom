@@ -1,13 +1,13 @@
-import React, { useRef, useEffect } from "react";
-import { mount } from "Cart/Cart";
+import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
+import CartItem from "Cart/Cart";
 
-export default () => {
-    const ref = useRef(null);
-
-    useEffect(() => {
-        mount(ref.current);
-    })
-    return <><div ref={ref}/><Link to='/checkout'><Button>Proceed to Checkout</Button></Link></>
-}
+export default () => (
+    <>
+        <CartItem />
+        <Link to='/checkout'>
+            <Button>Proceed to Checkout</Button>
+        </Link>
+    </>
+);

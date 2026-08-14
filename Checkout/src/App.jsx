@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { StoreProvider, useStore } from "Ecom/store";
-
+import { StoreProvider } from "Ecom/store";
 import "./index.css";
 import { Checkout } from "./Checkout";
 

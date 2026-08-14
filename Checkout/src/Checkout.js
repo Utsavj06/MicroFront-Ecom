@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import ReactDOM from 'react-dom'
 import styles from "./Checkout.module.css";
-import { StoreProvider, useStore } from "Ecom/store";
+import { useStore } from "Ecom/store";
 
 export const Checkout = () => {
   const { cart } = useStore();
@@ -115,17 +114,3 @@ export const Checkout = () => {
     </div>
   );
 };
-
-function mount(el) {
-    if(el) {
-      ReactDOM.render(<StoreProvider><Checkout /></StoreProvider>, el);
-    }
-  }
-  
-  if(process.env.NODE_ENV === "development") {
-    const devRoot = document.querySelector("#header")
-    if(devRoot)
-      mount(devRoot);
-  }
-  
-  export { mount };

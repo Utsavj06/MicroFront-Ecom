@@ -5,11 +5,10 @@ import {
   Route,
   Routes,
 } from "react-router-dom";
-import { Provider } from 'react-redux';
 import { Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
-import { store } from './Store';
+import { StoreProvider } from './Store';
 import Head from './Component/Header';
 
 const ProductApp = lazy(() => import('./ProductApp'));
@@ -18,7 +17,7 @@ const CheckoutApp = lazy(() => import('./CheckoutApp'));
 
 const App = () => {
   return (
-    <Provider store={store}>
+    <StoreProvider>
       <BrowserRouter>
         <Head />
         <Container>
@@ -31,7 +30,7 @@ const App = () => {
           </Suspense>
         </Container>
       </BrowserRouter>
-    </Provider>
+    </StoreProvider>
   );
 };
 
